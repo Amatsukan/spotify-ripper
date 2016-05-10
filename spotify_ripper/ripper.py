@@ -270,6 +270,7 @@ class Ripper(threading.Thread):
                         if is_partial(self.audio_file, track):
                             print("Overwriting partial file")
                         else:
+                            self.progress.track_idx += 1
                             print(
                                 Fore.YELLOW + "Skipping " +
                                 track.link.uri + Fore.RESET)
